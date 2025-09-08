@@ -1,4 +1,4 @@
-﻿#Requires -Version 5.1
+#Requires -Version 5.1
 
 <#
 .SYNOPSIS
@@ -301,7 +301,7 @@ function Get-OutputPath {
             
             $counter = 1
             do {
-                $newName = "${name}(${counter})${ext}"
+                $newName = "${name}_${counter}${ext}"
                 $newPath = Join-Path $dir $newName
                 $counter++
             } while ((Test-Path $newPath) -and $counter -lt 1000)
@@ -453,7 +453,7 @@ function New-CircularIcon {
         Width of each colored border ring in pixels. Default is 3. Range is 1-10
 
     .PARAMETER Size
-        Final size of the icon in pixels. Default is 32. Range is 16, 32, 64, 128.
+        Final size of the icon in pixels. Default is 32. Range is 16, 24, 32, 48, 64, 128.
 
     .PARAMETER AsBase64
         Switch to return the base64 encoded string of the generated icon.
